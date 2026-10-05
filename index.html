@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horizon Sports &amp; Business | Gestão, marketing e negócios no esporte</title>
+<meta name="description" content="A Horizon Sports & Business ajuda escolas de futebol, academias, clubes e profissionais do esporte a saírem do improviso e crescerem como negócio.">
+<meta name="theme-color" content="#18324D">
+<meta property="og:title" content="Horizon Sports & Business">
+<meta property="og:description" content="Gestão, marketing e negócios para quem vive o esporte.">
+<meta property="og:image" content="assets/horizon-logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/horizon-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#18324D;--navy-2:#1F3D5C;--orange:#F96B0E;--orange-h:#E05E08;
+  --sand:#F7F5F2;--line:#E6EAF0;--muted:#4A5B70;--wa:#25D366;--wa-h:#1EBE5A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--navy);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--orange);text-decoration:none}
+h1,h2,h3,h4,p{margin:0}
+input,textarea,select,button{font-family:inherit}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+
+.wrap{max-width:1200px;margin:0 auto;padding:96px 24px}
+.eyebrow{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+.h2{font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.15;text-wrap:balance}
+.head{text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.stack{display:flex;flex-direction:column;gap:40px}
+.dark{background:var(--navy);color:#fff}
+.sand{background:var(--sand)}
+section[id]{scroll-margin-top:80px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:10px;border:0;cursor:pointer;transition:background .15s,border-color .15s}
+.btn:hover{background:var(--orange-h);color:#fff}
+.btn-sm{font-size:14px;padding:12px 20px;border-radius:8px;white-space:nowrap}
+.btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:transparent;border-color:#fff}
+.btn-wa{background:var(--wa)}
+.btn-wa:hover{background:var(--wa-h)}
+
+/* Header */
+.header{position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08)}
+.header-in{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo img{height:56px;width:auto}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{color:#fff;font-weight:500;font-size:15px;padding:10px 14px;border-radius:8px}
+.nav a:hover{background:rgba(255,255,255,.08)}
+.nav a.cta{background:var(--orange);font-weight:700;padding:10px 18px;margin-left:6px}
+.nav a.cta:hover{background:var(--orange-h)}
+.menu-btn{display:none;width:44px;height:44px;border:0;border-radius:8px;background:rgba(255,255,255,.08);cursor:pointer;align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;background:#fff;border-radius:2px;position:relative;transition:transform .2s,background .2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}
+.menu-btn span::after{top:6px}
+.header.open .menu-btn span{background:transparent}
+.header.open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+.header.open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;padding-bottom:104px}
+.hero-copy{display:flex;flex-direction:column;gap:24px}
+.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:500;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 span{color:var(--orange);font-weight:700}
+.lead{font-size:18px;line-height:1.6;color:rgba(255,255,255,.88);max-width:540px;text-wrap:pretty}
+.lead strong{color:#fff}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.founder{background:var(--navy-2);border-radius:16px;overflow:hidden}
+.founder img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 20%}
+.founder-body{padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px}
+.founder-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.founder h2{font-size:24px;font-weight:700}
+.founder-top span{color:var(--orange);font-weight:700;font-size:14px}
+.founder p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.85)}
+
+/* Pillars */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pillar{border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.pillar .n{color:var(--orange);font-weight:800;font-size:32px;line-height:1}
+.pillar h3{font-size:18px;font-weight:700}
+.pillar p{font-size:15px;line-height:1.6;color:var(--muted)}
+
+/* Audience */
+.grid-aud{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.aud{background:var(--navy-2);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:10px;border-top:3px solid var(--orange)}
+.aud h3{font-size:19px;font-weight:700}
+.aud p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82)}
+
+/* Services */
+.panel{border-radius:18px;padding:clamp(24px,4vw,48px)}
+.services{background:#fff;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:40px;align-items:start}
+.services-intro{display:flex;flex-direction:column;gap:14px}
+.services-intro h3,.products h3{font-size:28px;font-weight:700}
+.services-intro p{font-size:16px;line-height:1.6;color:var(--muted)}
+.services-intro .btn{align-self:flex-start;margin-top:8px;font-size:15px;padding:14px 24px}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.svc{border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.svc h4{font-size:16px;font-weight:700}
+.svc p{font-size:14px;line-height:1.55;color:var(--muted)}
+
+.products{display:flex;flex-direction:column;gap:32px}
+.products-intro{display:flex;flex-direction:column;gap:10px}
+.products-intro p{font-size:16px;line-height:1.6;color:rgba(255,255,255,.85);max-width:520px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.ebook{background:var(--navy-2);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:150px minmax(0,1fr)}
+.ebook-cover{display:flex;align-items:center;justify-content:center;padding:16px}
+.ebook-cover img{width:100%;height:auto}
+.ebook-body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.ebook-body .tag{color:var(--orange);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.ebook-body h4{font-size:20px;font-weight:700;line-height:1.25}
+.ebook-body p{font-size:14px;line-height:1.55;color:rgba(255,255,255,.8)}
+.ebook-body .btn{margin-top:auto;align-self:flex-start}
+
+/* About */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.about > img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;border-radius:18px}
+.about-copy{display:flex;flex-direction:column;gap:20px}
+.about-copy h2 span{color:var(--orange)}
+.about-copy p{font-size:17px;line-height:1.65;color:var(--muted);text-wrap:pretty}
+.about-copy strong{color:var(--navy)}
+.quote{margin-top:8px!important;padding-left:18px;border-left:3px solid var(--orange);font-size:20px!important;line-height:1.45!important;font-weight:700;font-style:italic;color:var(--navy)!important}
+
+/* Partners */
+.partners{display:flex;flex-direction:column;gap:40px;align-items:center}
+.partners .head{max-width:720px}
+.logos{width:100%;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+.logos div{height:96px;background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center;font-weight:700;font-size:17px;transition:border-color .15s}
+.logos div:hover{border-color:var(--orange)}
+
+/* FAQ */
+.faq{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq details{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-size:17px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--orange);font-size:24px;line-height:1;flex-shrink:0}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 24px 22px;font-size:16px;line-height:1.65;color:var(--muted)}
+
+/* Contact */
+.contact{border-radius:20px;padding:clamp(24px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-copy{display:flex;flex-direction:column;gap:18px}
+.contact-copy h2{font-weight:500;line-height:1.12}
+.contact-copy h2 strong{font-weight:700}
+.contact-copy p{font-size:17px;line-height:1.6;color:rgba(255,255,255,.85);max-width:440px}
+.contact-copy .btn{align-self:flex-start;margin-top:8px;padding:16px 24px}
+.form,.sent{background:#fff;color:var(--navy);border-radius:14px;padding:28px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
+.form .full{grid-column:1/-1}
+.form input,.form select,.form textarea{height:48px;border:1px solid #D5DCE5;border-radius:8px;padding:0 14px;font-size:16px;color:var(--navy);background:#fff;width:100%}
+.form textarea{height:auto;padding:12px 14px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(249,107,14,.18)}
+.form .btn{grid-column:1/-1;height:52px;padding:0}
+.form small{grid-column:1/-1;font-size:13px;color:var(--muted);text-align:center}
+.sent{display:none;flex-direction:column;gap:12px;justify-content:center;align-items:flex-start;padding:40px 28px}
+.sent h3{font-size:24px;font-weight:700}
+.sent p{font-size:16px;line-height:1.6;color:var(--muted)}
+.sent button{margin-top:8px;border:1.5px solid var(--navy);background:transparent;color:var(--navy);font-weight:700;font-size:15px;padding:12px 20px;border-radius:8px;cursor:pointer}
+.contact.is-sent .form{display:none}
+.contact.is-sent .sent{display:flex}
+
+/* Footer */
+.footer-in{max-width:1200px;margin:0 auto;padding:48px 24px 112px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.footer-in img{height:72px;width:auto}
+.footer-in p{font-size:15px;color:rgba(255,255,255,.8)}
+
+/* WhatsApp float */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:30;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;font-weight:700;font-size:15px;padding:0 22px 0 18px;height:56px;border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.wa-float:hover{background:var(--wa-h);color:#fff}
+
+/* ---------- Tablet ---------- */
+@media (max-width:1024px){
+  .grid-4,.grid-aud{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .hero,.about,.contact{gap:40px}
+}
+
+/* ---------- Mobile menu breakpoint ---------- */
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  .logo img{height:44px}
+  .nav{position:absolute;top:100%;left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:4px;padding:8px 16px 20px;border-bottom:1px solid rgba(255,255,255,.08);box-shadow:0 12px 24px rgba(0,0,0,.2);display:none}
+  .header.open .nav{display:flex}
+  .nav a{padding:14px;font-size:16px}
+  .nav a.cta{margin:8px 0 0;text-align:center}
+  .hero,.about,.contact{grid-template-columns:1fr}
+  .about > img{max-width:480px;aspect-ratio:1/1}
+}
+
+/* ---------- Phone ---------- */
+@media (max-width:600px){
+  .wrap{padding:64px 16px}
+  .header-in{padding:10px 16px}
+  .hero{padding-bottom:72px}
+  .lead{font-size:17px}
+  .actions .btn{flex:1 1 100%}
+  .founder-body{padding:22px}
+  .grid-4,.grid-aud,.svc-grid{grid-template-columns:1fr}
+  .pillar,.aud{padding:22px}
+  .ebook{grid-template-columns:110px minmax(0,1fr)}
+  .ebook-cover{padding:12px}
+  .ebook-body{padding:18px}
+  .ebook-body h4{font-size:17px}
+  .about-copy p{font-size:16px}
+  .quote{font-size:18px!important}
+  .logos{grid-template-columns:repeat(2,1fr)}
+  .logos div{height:76px;font-size:15px}
+  .faq summary{padding:18px;font-size:16px}
+  .faq details p{padding:0 18px 18px;font-size:15px}
+  .form{grid-template-columns:1fr;padding:20px}
+  .contact-copy .btn{align-self:stretch}
+  .wa-float{right:16px;bottom:16px;width:56px;padding:0;justify-content:center}
+  .wa-float .label{display:none}
+  .footer-in{padding-bottom:96px}
+}
+@media (max-width:380px){
+  .ebook{grid-template-columns:1fr}
+  .ebook-cover{max-height:220px}
+  .ebook-cover img{width:auto;max-height:190px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="header-in">
+    <a href="#top" class="logo" aria-label="Horizon Sports &amp; Business — início"><img src="assets/horizon-logo.png" alt="Horizon Sports &amp; Business" width="135" height="56"></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#servicos">Serviços e produtos</a>
+      <a href="#parceiros">Parceiros</a>
+      <a href="#contato" class="cta">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section id="quem-somos" class="dark">
+    <div class="wrap hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Quem somos</span>
+        <h1>Gestão, marketing e negócios para quem vive o <span>esporte</span></h1>
+        <p class="lead">A Horizon Sports &amp; Business ajuda escolas de futebol, academias, clubes e profissionais do esporte a saírem do improviso e crescerem como negócio, com <strong>processos, marketing, gestão e metodologia</strong>.</p>
+        <div class="actions">
+          <a href="#servicos" class="btn">Conheça nossas soluções</a>
+          <a href="#contato" class="btn btn-ghost">Fale com a gente</a>
+        </div>
+      </div>
+      <div class="founder">
+        <img src="assets/thiago-amorim.jpg" alt="Thiago Amorim" width="1090" height="936">
+        <div class="founder-body">
+          <div class="founder-top">
+            <h2>Thiago Amorim</h2>
+            <span>Fundador</span>
+          </div>
+          <p>Profissional de Educação Física, gestor e especialista em marketing esportivo, com mais de 18 anos de experiência no esporte em grandes clubes, entidades e marcas do setor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-4">
+      <div class="pillar"><span class="n">01</span><h3>Gestão</h3><p>Modelo de negócio, processos, indicadores e equipe alinhada.</p></div>
+      <div class="pillar"><span class="n">02</span><h3>Marketing</h3><p>Marca, redes sociais e mídia digital para atrair e reter alunos e clientes.</p></div>
+      <div class="pillar"><span class="n">03</span><h3>Metodologia</h3><p>Estrutura de aulas, treinos e planejamento anual com foco pedagógico.</p></div>
+      <div class="pillar"><span class="n">04</span><h3>Negócios</h3><p>Licenciamento, patrocínios e parcerias estratégicas com clubes e marcas.</p></div>
+    </div>
+  </section>
+
+  <section id="para-quem" class="dark">
+    <div class="wrap stack">
+      <div class="head">
+        <span class="eyebrow">Para quem é</span>
+        <h2 class="h2">Quem a Horizon ajuda</h2>
+      </div>
+      <div class="grid-aud">
+        <div class="aud"><h3>Escolas de futebol</h3><p>Donos, gestores e coordenadores que querem organizar a operação, encher turmas e manter alunos por anos.</p></div>
+        <div class="aud"><h3>Academias e centros esportivos</h3><p>Negócios que precisam de processos, marketing e uma equipe alinhada para crescer de forma sustentável.</p></div>
+        <div class="aud"><h3>Profissionais do esporte</h3><p>Professores, personal trainers, técnicos e atletas que querem construir marca pessoal e atrair clientes.</p></div>
+        <div class="aud"><h3>Clubes e marcas</h3><p>Empresas que buscam licenciamento, ativação de marca, patrocínios e parcerias no mercado esportivo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="sand">
+    <div class="wrap stack">
+      <div class="head">
+        <span class="eyebrow">Serviços e produtos</span>
+        <h2 class="h2">Soluções para profissionalizar o seu projeto esportivo</h2>
+      </div>
+
+      <div class="panel services">
+        <div class="services-intro">
+          <h3>Serviços</h3>
+          <p>Acompanhamento direto do Thiago e da equipe Horizon para estruturar e fazer crescer o seu negócio no esporte.</p>
+          <a href="#contato" class="btn">Solicitar proposta</a>
+        </div>
+        <div class="svc-grid">
+          <div class="svc"><h4>Consultoria para escolas de futebol</h4><p>Diagnóstico e estruturação de gestão, processos e equipe.</p></div>
+          <div class="svc"><h4>Marketing esportivo</h4><p>Posicionamento, redes sociais e campanhas de captação.</p></div>
+          <div class="svc"><h4>Licenciamento e franquias</h4><p>Escolha e implantação do modelo certo com clubes parceiros.</p></div>
+          <div class="svc"><h4>Patrocínios</h4><p>Captação e ativação de marcas no seu projeto.</p></div>
+          <div class="svc"><h4>Implementação de academias</h4><p>Da metodologia à operação de academias de futebol.</p></div>
+          <div class="svc"><h4>Palestras e mentorias</h4><p>Conteúdo para gestores e profissionais do esporte.</p></div>
+        </div>
+      </div>
+
+      <div class="panel products dark">
+        <div class="products-intro">
+          <h3>Produtos</h3>
+          <p>Ebooks práticos, escritos por Thiago Amorim, para você aplicar no seu dia a dia.</p>
+        </div>
+        <div class="grid-2">
+          <article class="ebook">
+            <div class="ebook-cover" style="background:#18324D"><img src="assets/ebook-gestao.png" alt="Ebook Os 9 passos obrigatórios" width="397" height="600" loading="lazy"></div>
+            <div class="ebook-body">
+              <span class="tag">Gestão de escolas de futebol</span>
+              <h4>Os 9 passos obrigatórios para sair do improviso rumo ao sucesso</h4>
+              <p>Para donos, gestores, coordenadores e professores de escolas de futebol.</p>
+              <a href="https://horizonsports.br" class="btn btn-sm">Conhecer o ebook</a>
+            </div>
+          </article>
+          <article class="ebook">
+            <div class="ebook-cover" style="background:#E8640C"><img src="assets/ebook-marketing.png" alt="Ebook O Marketing para Profissionais do Esporte" width="403" height="600" loading="lazy"></div>
+            <div class="ebook-body">
+              <span class="tag">Marketing esportivo</span>
+              <h4>O marketing para profissionais do esporte</h4>
+              <p>Marketing, mídias sociais e vendas para potencializar a sua carreira e o seu produto.</p>
+              <a href="https://metodoesporte.horizonsports.br" class="btn btn-sm">Conhecer o ebook</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="thiago">
+    <div class="wrap about">
+      <img src="assets/thiago-amorim.jpg" alt="Thiago Amorim" width="1090" height="936" loading="lazy">
+      <div class="about-copy">
+        <span class="eyebrow">Fundador</span>
+        <h2 class="h2">Quem é <span>Thiago Amorim</span></h2>
+        <p><strong>Thiago Amorim</strong> é profissional de Educação Física, gestor e especialista em marketing esportivo, com mais de 18 anos de experiência no esporte, dedicado à atuação em áreas estratégicas de grandes clubes e entidades do setor.</p>
+        <p>Sua trajetória abrange diversas frentes, como marketing, programas de sócio-torcedor, licenciamento de produtos, varejo, ativação de marcas, gestão de redes sociais e mídia digital, desenvolvimento comercial, captação de patrocínios, formação de parcerias estratégicas, futebol de base e implementação de academias de futebol.</p>
+        <p>Atuou em projetos com <strong>Corinthians, Palmeiras, CBF, CBF Academy e Neymar Jr</strong>, além de iniciativas de metodologia oficial em escolas licenciadas e projetos estratégicos com empresas como <strong>Meta, TikTok, EA Sports, Konami, Puma, Adidas, Ambev, Nike</strong> e outras líderes do mercado esportivo.</p>
+        <p class="quote">"Tudo que está aqui veio da prática com escolas reais, projetos reais e desafios reais."</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="parceiros" class="sand">
+    <div class="wrap partners">
+      <div class="head">
+        <span class="eyebrow">Parceiros de negócios</span>
+        <h2 class="h2">Clubes, entidades e marcas com quem já trabalhamos</h2>
+      </div>
+      <div class="logos">
+        <div>Corinthians</div><div>Palmeiras</div><div>CBF</div><div>CBF Academy</div>
+        <div>Neymar Jr</div><div>Meta</div><div>TikTok</div><div>EA Sports</div>
+        <div>Konami</div><div>Puma</div><div>Adidas</div><div>Nike</div>
+        <div>Ambev</div><div>Betfair</div><div>Globo</div><div>SportingBet</div>
+      </div>
+      <a href="#contato" class="btn">Quero ser parceiro</a>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap faq">
+      <div class="head">
+        <span class="eyebrow">Dúvidas</span>
+        <h2 class="h2">Perguntas frequentes</h2>
+      </div>
+      <div class="faq-list">
+        <details name="faq"><summary>O que a Horizon faz?</summary><p>A Horizon Sports &amp; Business oferece consultoria, conteúdo e parcerias para profissionalizar a gestão e o marketing de escolas de futebol, academias, clubes e profissionais do esporte.</p></details>
+        <details name="faq"><summary>Atendem escolas franqueadas, licenciadas e independentes?</summary><p>Sim. Ajudamos a escolher o modelo certo e a estruturar a operação em qualquer um dos formatos.</p></details>
+        <details name="faq"><summary>Preciso ter experiência em gestão para contratar?</summary><p>Não. O trabalho começa com um diagnóstico do seu momento e avança em etapas práticas.</p></details>
+        <details name="faq"><summary>O atendimento é presencial ou online?</summary><p>Os dois formatos são possíveis. Definimos juntos o que faz mais sentido para o seu projeto.</p></details>
+        <details name="faq"><summary>Como funcionam os ebooks?</summary><p>São materiais digitais em PDF com acesso imediato após a confirmação do pagamento.</p></details>
+        <details name="faq"><summary>Como solicito uma proposta?</summary><p>Preencha o formulário abaixo ou chame no WhatsApp. Respondemos em até 1 dia útil.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="sand">
+    <div class="wrap">
+      <div class="contact dark" id="contactBox">
+        <div class="contact-copy">
+          <span class="eyebrow">Contato</span>
+          <h2 class="h2">Vamos tirar o seu projeto do <strong>improviso?</strong></h2>
+          <p>Conte um pouco sobre você e o seu negócio. Respondemos em até 1 dia útil.</p>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-wa js-wa">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true"><use href="#wa-icon"/></svg>
+            Chamar no WhatsApp
+          </a>
+        </div>
+
+        <form class="form" id="contactForm">
+          <label>Nome<input required name="nome" autocomplete="name" placeholder="Seu nome completo"></label>
+          <label>WhatsApp<input required name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000"></label>
+          <label class="full">E-mail<input required name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com"></label>
+          <label class="full">Assunto
+            <select name="assunto">
+              <option>Consultoria para escola de futebol</option>
+              <option>Marketing esportivo</option>
+              <option>Ebooks</option>
+              <option>Parcerias de negócios</option>
+              <option>Outro assunto</option>
+            </select>
+          </label>
+          <label class="full">Mensagem<textarea name="msg" rows="4" placeholder="Conte um pouco sobre você e o seu projeto"></textarea></label>
+          <button type="submit" class="btn">Enviar mensagem</button>
+          <small>Ao enviar, abriremos o WhatsApp com a sua mensagem preenchida.</small>
+        </form>
+        <div class="sent" role="status">
+          <h3>Mensagem enviada</h3>
+          <p>Obrigado pelo contato. Em breve a equipe Horizon retorna para você.</p>
+          <button type="button" id="resetForm">Enviar outra mensagem</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="dark">
+  <div class="footer-in">
+    <img src="assets/horizon-logo.png" alt="Horizon Sports &amp; Business" width="173" height="72" loading="lazy">
+    <p>© <span id="year">2026</span> Horizon Sports &amp; Business. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a href="#" target="_blank" rel="noopener" class="wa-float js-wa" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff" aria-hidden="true"><use href="#wa-icon"/></svg><span class="label">WhatsApp</span>
+</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+</svg>
+
+<script>
+// Número do WhatsApp (DDI + DDD + número, só dígitos)
+var WHATSAPP_NUMBER = '5511999999999';
+
+function waLink(text) {
+  return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
+}
+
+document.querySelectorAll('.js-wa').forEach(function (a) {
+  a.href = waLink('Olá! Vim pelo site da Horizon e gostaria de mais informações.');
+});
+
+// Menu mobile
+var header = document.getElementById('header');
+var menuBtn = document.getElementById('menuBtn');
+function setMenu(open) {
+  header.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+}
+menuBtn.addEventListener('click', function () { setMenu(!header.classList.contains('open')); });
+document.querySelectorAll('#nav a').forEach(function (a) {
+  a.addEventListener('click', function () { setMenu(false); });
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+// FAQ: apenas um aberto por vez (fallback para navegadores sem <details name>)
+document.querySelectorAll('.faq details').forEach(function (d, _, all) {
+  d.addEventListener('toggle', function () {
+    if (d.open) all.forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+
+// Formulário → WhatsApp
+var form = document.getElementById('contactForm');
+var box = document.getElementById('contactBox');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = form.elements;
+  var text = 'Olá! Vim pelo site da Horizon.\n\n' +
+    '*Nome:* ' + f.nome.value + '\n' +
+    '*WhatsApp:* ' + f.tel.value + '\n' +
+    '*E-mail:* ' + f.email.value + '\n' +
+    '*Assunto:* ' + f.assunto.value +
+    (f.msg.value.trim() ? '\n\n' + f.msg.value.trim() : '');
+  window.open(waLink(text), '_blank', 'noopener');
+  box.classList.add('is-sent');
+});
+document.getElementById('resetForm').addEventListener('click', function () {
+  form.reset();
+  box.classList.remove('is-sent');
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
