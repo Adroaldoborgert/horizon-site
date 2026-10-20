@@ -69,6 +69,7 @@ section[id]{scroll-margin-top:92px}
 /* ---------- Grids ---------- */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-xp{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 /* cinco cartões: 3 + 2, com a ordem de leitura 01 → 05 preservada */
 .grid-5{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
 .grid-5>*{grid-column:span 2}
@@ -104,12 +105,20 @@ section[id]{scroll-margin-top:92px}
 .xp{background:var(--navy-2);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:10px}
 .xp-head{display:flex;align-items:center;gap:14px;min-height:56px}
 .xp-logo{height:56px;width:auto;flex-shrink:0}
+.xp-logo.on-light{box-sizing:content-box;background:#fff;border-radius:10px;padding:6px 8px;height:52px}
 .xp .club{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
 .xp h3{font-size:21px;font-weight:700;line-height:1.25}
 .xp .role{font-size:15px;font-weight:700;line-height:1.4;color:#fff}
 .xp .period{align-self:flex-start;font-size:13px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 12px}
 .xp-job{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
-.xp p:last-child{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin-top:4px}
+.xp-more{display:flex;flex-direction:column;gap:20px}
+.js .xp-more:not(.open){display:none}
+.xp-toggle{display:none;align-self:flex-start;align-items:center;gap:8px;margin-top:auto;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:8px;padding:10px 18px;font-size:14px;font-weight:700;cursor:pointer;transition:border-color .15s}
+.xp-toggle::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.xp-toggle[aria-expanded="true"]::after{transform:rotate(-135deg) translateY(-2px)}
+.xp-toggle:hover{border-color:#fff}
+.js .xp-toggle{display:inline-flex}
+.xp p:not(.role){font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin-top:4px}
 
 /* ---------- Fundador ---------- */
 .about{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
@@ -234,7 +243,7 @@ section[id]{scroll-margin-top:92px}
   .js .nav a.cta{margin:8px 0 0;text-align:center}
   .logo img{height:56px}
   .hero,.about,.contact{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
+  .grid-3,.grid-xp{grid-template-columns:1fr}
   .career-row{grid-template-columns:1fr;gap:8px}
   .career dt{padding-top:0}
 }

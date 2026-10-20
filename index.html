@@ -152,7 +152,7 @@
         <h2 class="h2">Experiência de quem conduz a Horizon</h2>
         <p class="sub">A atuação de Thiago Amorim em clubes e entidades esportivas é a base do trabalho desenvolvido pela Horizon. Os exemplos abaixo reúnem sua atuação atual e experiências anteriores à criação da empresa.</p>
       </div>
-      <div class="grid-3">
+      <div class="grid-xp">
         <article class="xp">
           <div class="xp-head"><img class="xp-logo" src="assets/logos/juventus.png" alt="Escudo do Juventus" width="133" height="168" loading="lazy"><span class="club">Juventus SAF</span></div>
           <h3>Futsal federado e academias de futebol</h3>
@@ -162,16 +162,37 @@
         </article>
         <article class="xp">
           <div class="xp-head"><img class="xp-logo" src="assets/logos/palmeiras.png" alt="Escudo do Palmeiras" width="168" height="168" loading="lazy"><span class="club">Palmeiras</span></div>
-          <h3>Marketing, licenciamento e novos negócios</h3>
-          <div class="xp-job">
-            <p class="role">Gerente de Marketing, Canais Digitais e Novos Negócios</p>
-            <span class="period">2023 a 2025</span>
-            <p>Liderança das áreas de marketing e canais digitais, estruturação e lançamento do Palmeiras Pay e condução da comunicação do Sócio Avanti. Atuação na negociação de contratos estratégicos, patrocínios e parcerias comerciais.</p>
+          <h3>Marketing e novos negócios</h3>
+          <p class="role">Gerente de Marketing, Canais Digitais e Novos Negócios</p>
+          <span class="period">2023 a 2025</span>
+          <p>Liderança das áreas de marketing e canais digitais, estruturação e lançamento do Palmeiras Pay e condução da comunicação do Sócio Avanti. Atuação na negociação de contratos estratégicos, patrocínios e parcerias comerciais.</p>
+          <div class="xp-more" id="xp-more-palmeiras">
+            <div class="xp-job">
+              <h3>Licenciamento, varejo e franquias</h3>
+              <p class="role">Gerente de Licenciamento, Varejo e Franquias</p>
+              <span class="period">2022</span>
+              <p>Gestão das operações de licenciamento de marca, e-commerce e franquias de lojas e escolas oficiais. Desenvolvimento de parcerias e ampliação do portfólio de produtos, com acompanhamento de indicadores e da operação comercial.</p>
+            </div>
+            <div class="xp-job">
+              <h3>Operações e escolas oficiais</h3>
+              <p class="role">Gerente de Operações, Administrativo e Pedagógico</p>
+              <span class="period">2017 a 2021</span>
+              <p>Estruturação do modelo de escolas oficiais do clube, incluindo processos e padrões para todas as áreas. Expansão da rede para mais de 30 unidades, com faturamento superior a R$ 1 milhão/ano. Gestão operacional, de equipes e de formação de treinadores, garantindo manutenção do padrão de qualidade. Condução do relacionamento com franqueados, pais e comunidade local, fortalecendo a imagem do clube. Desenvolvimento de programas de treinamento alinhados à filosofia do Palmeiras.</p>
+            </div>
           </div>
+          <button type="button" class="xp-toggle" aria-expanded="false" aria-controls="xp-more-palmeiras">Ler mais</button>
+        </article>
+        <article class="xp">
+          <div class="xp-head"><img class="xp-logo" src="assets/logos/cbf.png" alt="Escudo da CBF" width="118" height="168" loading="lazy"><span class="club">CBF</span></div>
+          <h3>Protocolos e conteúdo técnico</h3>
+          <p class="role">Autor e coautor de conteúdo técnico</p>
+          <p>Participação na elaboração do &ldquo;Protocolo de volta às atividades físicas – COVID-19&rdquo;, da CBF, com orientações para o retorno às atividades esportivas durante a pandemia.</p>
           <div class="xp-job">
-            <p class="role">Gerente de Licenciamento, Varejo e Franquias</p>
-            <span class="period">2022</span>
-            <p>Gestão das operações de licenciamento de marca, e-commerce e franquias de lojas e escolas oficiais. Desenvolvimento de parcerias e ampliação do portfólio de produtos, com acompanhamento de indicadores e da operação comercial.</p>
+            <div class="xp-head"><img class="xp-logo on-light" src="assets/logos/cbf-academy.png" alt="Logo da CBF Academy" width="107" height="168" loading="lazy"><span class="club">CBF Academy</span></div>
+            <h3>Formação e capacitação no futebol</h3>
+            <p class="role">Professor</p>
+            <span class="period">Desde 2022</span>
+            <p>Planejamento e condução de aulas técnicas e pedagógicas, com desenvolvimento de conteúdos para a capacitação de atletas e profissionais do futebol. Acompanhamento do desempenho e da evolução dos alunos ao longo da formação.</p>
           </div>
         </article>
         <article class="xp">
@@ -392,6 +413,16 @@ document.querySelectorAll('#nav a').forEach(function (a) {
   a.addEventListener('click', function () { setMenu(false); });
 });
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+// Cartões de experiência: "Ler mais" / "Ler menos"
+document.querySelectorAll('.xp-toggle').forEach(function (btn) {
+  var box = document.getElementById(btn.getAttribute('aria-controls'));
+  btn.addEventListener('click', function () {
+    var open = box.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Ler menos' : 'Ler mais';
+  });
+});
 
 // FAQ: um item aberto por vez (fallback para navegadores sem <details name>)
 document.querySelectorAll('.faq details').forEach(function (d, _, all) {
