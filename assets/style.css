@@ -115,7 +115,7 @@ section[id]{scroll-margin-top:92px}
 .about-copy p{font-size:17px;line-height:1.65;color:var(--muted);text-wrap:pretty}
 .about-copy strong{color:var(--navy)}
 .facts{background:var(--navy);color:#fff;border-radius:18px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:0}
-.fact{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.fact{display:grid;grid-template-columns:158px minmax(0,1fr);gap:16px;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.12)}
 .fact:first-child{padding-top:0}
 .fact:last-child{border-bottom:0;padding-bottom:0}
 .fact b{color:var(--orange);font-size:30px;line-height:1.1;font-weight:800}
@@ -258,8 +258,8 @@ section[id]{scroll-margin-top:92px}
   .ebook-cover{padding:12px}
   .ebook-body{padding:18px}
   .ebook-body h3{font-size:17px}
-  .fact{grid-template-columns:92px minmax(0,1fr);gap:12px}
-  .fact b{font-size:26px}
+  .fact{grid-template-columns:128px minmax(0,1fr);gap:12px}
+  .fact b{font-size:24px}
   .fact b.sm{font-size:17px}
   .client{padding:22px 20px}
   .about-copy p{font-size:16px}
