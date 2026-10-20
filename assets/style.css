@@ -102,10 +102,13 @@ section[id]{scroll-margin-top:92px}
 
 /* ---------- Experiência ---------- */
 .xp{background:var(--navy-2);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.xp-head{display:flex;align-items:center;gap:14px;min-height:56px}
+.xp-logo{height:56px;width:auto;flex-shrink:0}
 .xp .club{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
 .xp h3{font-size:21px;font-weight:700;line-height:1.25}
 .xp .role{font-size:15px;font-weight:700;line-height:1.4;color:#fff}
 .xp .period{align-self:flex-start;font-size:13px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 12px}
+.xp-job{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
 .xp p:last-child{font-size:15px;line-height:1.6;color:rgba(255,255,255,.82);margin-top:4px}
 
 /* ---------- Fundador ---------- */
@@ -123,9 +126,6 @@ section[id]{scroll-margin-top:92px}
 .fact span{font-size:16px;line-height:1.45;color:rgba(255,255,255,.9)}
 
 /* ---------- Trajetória ---------- */
-.client{background:#fff;border:1px solid var(--line);border-left:6px solid var(--orange);border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.client .label{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase}
-.client .name{font-size:clamp(28px,4vw,40px);font-weight:800;line-height:1.1}
 .career{background:#fff;border:1px dashed #C9D2DD;border-radius:18px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px}
 .career h3{font-size:24px;font-weight:700}
 .career dl{display:flex;flex-direction:column;gap:18px}
@@ -261,8 +261,7 @@ section[id]{scroll-margin-top:92px}
   .fact{grid-template-columns:128px minmax(0,1fr);gap:12px}
   .fact b{font-size:24px}
   .fact b.sm{font-size:17px}
-  .client{padding:22px 20px}
-  .about-copy p{font-size:16px}
+    .about-copy p{font-size:16px}
   .faq summary{padding:18px;font-size:16px}
   .faq details p{padding:0 18px 18px;font-size:15px}
   .form-card{padding:20px}
