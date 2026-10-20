@@ -69,7 +69,10 @@ section[id]{scroll-margin-top:92px}
 /* ---------- Grids ---------- */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.grid-xp{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+/* experiência: 2 cartões em cima (3 colunas cada) + 3 iguais embaixo (2 colunas cada) */
+.grid-xp{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.grid-xp>*{grid-column:span 2}
+.grid-xp>:nth-child(1),.grid-xp>:nth-child(2){grid-column:span 3}
 /* cinco cartões: 3 + 2, com a ordem de leitura 01 → 05 preservada */
 .grid-5{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
 .grid-5>*{grid-column:span 2}
@@ -103,7 +106,7 @@ section[id]{scroll-margin-top:92px}
 
 /* ---------- Experiência ---------- */
 .xp{background:var(--navy-2);border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:10px}
-.xp-head{display:flex;align-items:center;gap:14px;min-height:56px}
+.xp-head{display:flex;align-items:center;gap:14px;min-height:64px}
 .xp-logo{height:56px;width:auto;flex-shrink:0}
 .xp-logo.on-light{box-sizing:content-box;background:#fff;border-radius:10px;padding:6px 8px;height:52px}
 .xp .club{color:var(--orange);font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
@@ -225,6 +228,9 @@ section[id]{scroll-margin-top:92px}
   .grid-5>*,.grid-5>:nth-child(4){grid-column:span 1}
   .grid-5>:nth-child(5){grid-column:1/-1}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-xp{grid-template-columns:repeat(2,1fr)}
+  .grid-xp>*,.grid-xp>:nth-child(1),.grid-xp>:nth-child(2){grid-column:span 1}
+  .grid-xp>:nth-child(5){grid-column:1/-1}
   .svc.feat{grid-column:1/-1}
   .svc-grid>.svc:last-child{grid-column:1/-1}
   .grid-2{grid-template-columns:1fr}
@@ -244,6 +250,7 @@ section[id]{scroll-margin-top:92px}
   .logo img{height:56px}
   .hero,.about,.contact{grid-template-columns:1fr}
   .grid-3,.grid-xp{grid-template-columns:1fr}
+  .grid-xp>*,.grid-xp>:nth-child(n){grid-column:auto}
   .career-row{grid-template-columns:1fr;gap:8px}
   .career dt{padding-top:0}
 }
