@@ -95,6 +95,11 @@ section[id]{scroll-margin-top:92px}
 .svc h3{font-size:17px;font-weight:700;line-height:1.3}
 .svc p{font-size:14.5px;line-height:1.6;color:var(--muted)}
 .svc.feat{grid-column:span 2;background:var(--navy);border-color:var(--navy);color:#fff;border-top:3px solid var(--orange);padding:32px;justify-content:center}
+.svc.wide{grid-column:span 2}
+.promo{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;background:#FFF1E8;border:1px solid #FBD3B8;border-left:6px solid var(--orange);border-radius:14px;padding:28px 32px}
+.promo h3{font-size:22px;font-weight:700;line-height:1.25;margin-bottom:6px}
+.promo p{font-size:16px;line-height:1.6;color:var(--muted);max-width:640px}
+.promo .btn{flex-shrink:0}
 .svc.feat h3{font-size:24px}
 .svc.feat p{font-size:16px;color:rgba(255,255,255,.85);max-width:560px}
 
@@ -227,12 +232,11 @@ section[id]{scroll-margin-top:92px}
   .grid-5{grid-template-columns:repeat(2,1fr)}
   .grid-5>*,.grid-5>:nth-child(4){grid-column:span 1}
   .grid-5>:nth-child(5){grid-column:1/-1}
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid{grid-template-columns:repeat(2,1fr);grid-auto-flow:dense}
   .grid-xp{grid-template-columns:repeat(2,1fr)}
   .grid-xp>*,.grid-xp>:nth-child(1),.grid-xp>:nth-child(2){grid-column:span 1}
   .grid-xp>:nth-child(5){grid-column:1/-1}
-  .svc.feat{grid-column:1/-1}
-  .svc-grid>.svc:last-child{grid-column:1/-1}
+  .svc.feat,.svc.wide{grid-column:1/-1}
   .grid-2{grid-template-columns:1fr}
   .hero,.about,.contact{gap:40px}
 }
@@ -266,7 +270,9 @@ section[id]{scroll-margin-top:92px}
   .grid-5{grid-template-columns:1fr}
   .grid-5>*,.grid-5>:nth-child(n){grid-column:auto}
   .svc-grid{grid-template-columns:1fr}
-  .svc.feat,.svc-grid>.svc:last-child{grid-column:auto}
+  .svc.feat,.svc.wide{grid-column:auto}
+  .promo{flex-direction:column;align-items:flex-start;gap:18px;padding:22px}
+  .promo .btn{width:100%}
   .svc.feat{padding:24px}
   .svc.feat h3{font-size:21px}
   .pillar,.aud,.card,.xp,.step{padding:22px}
